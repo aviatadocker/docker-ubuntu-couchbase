@@ -11,3 +11,6 @@ RUN date -u +"%Y-%m-%d %H:%M%S?" && wget -O couchbase.deb http://packages.couchb
 EXPOSE 4369 8091 8092 11209 11210 11211 11214 11215 18091 18092 21100-21299
 
 VOLUME ["/opt/couchbase"]
+
+RUN date -u +"%Y-%m-%d %H:%M%S?" && rm couchbase.deb
+CMD service couchbase-server start
